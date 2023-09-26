@@ -3,6 +3,7 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -11,7 +12,7 @@ export class App extends Component {
     bad: 0,
   };
   handleAddFeedback = option => {
-    this.setState(prevState => ({ [option]: prevState[option] + 1, }));
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
   };
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
@@ -24,11 +25,12 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
     const options = Object.keys(this.state);
     return (
-      <div>
+      <div className={css.section}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             handleAddFeedback={this.handleAddFeedback}
-            options={options} />
+            options={options}
+          />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() > 0 ? (

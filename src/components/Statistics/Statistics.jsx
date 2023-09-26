@@ -1,3 +1,5 @@
+import css from './Statistics.module.css';
+
 export const Statistics = ({
   good,
   neutral,
@@ -7,26 +9,26 @@ export const Statistics = ({
 }) => {
   return (
     <div>
-      <ul>
-        <li>
+      <ul className={css.statistics}>
+        <li className={css.items}>
           <p>Good</p>
-          <span>{good}</span>
+          <span className={css.results}>{good}</span>
         </li>
-        <li>
+        <li className={css.items}>
           <p>Neutral</p>
-          <span>{neutral}</span>
+          <span className={css.results}>{neutral}</span>
         </li>
-        <li>
+        <li className={css.items}>
           <p>Bad</p>
-          <span>{bad}</span>
+          <span className={css.results}>{bad}</span>
         </li>
-        <li>
+        <li className={css.items}>
           <p>Total</p>
-          <span>{total}</span>
+          <span className={css.results}>{total}</span>
         </li>
-        <li>
+        <li className={css.items}>
           <p>Positive feedback:</p>
-                  <span>{positivePercentage}%</span>
+          <span className={css.results}>{positivePercentage}%</span>
         </li>
       </ul>
     </div>

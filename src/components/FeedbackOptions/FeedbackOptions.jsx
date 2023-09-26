@@ -1,19 +1,33 @@
+import css from './FeedbackOptions.module.css';
+
 export const FeedbackOptions = ({ handleAddFeedback }) => {
   return (
     <div>
-      <ul>
-        <li>
-          <button type="button" onClick={() => handleAddFeedback('good')}>
+      <ul className={css.list}>
+        <li className={css.items}>
+          <button
+            className={css.buttons}
+            type="button"
+            onClick={() => handleAddFeedback('good')}
+          >
             Good
           </button>
         </li>
-        <li>
-          <button type="button" onClick={() => handleAddFeedback('neutral')}>
+        <li className={css.items}>
+          <button
+            className={css.buttons}
+            type="button"
+            onClick={() => handleAddFeedback('neutral')}
+          >
             Neutral
           </button>
         </li>
-        <li>
-          <button type="button" onClick={() => handleAddFeedback('bad')}>
+        <li className={css.items}>
+          <button
+            className={css.buttons}
+            type="button"
+            onClick={() => handleAddFeedback('bad')}
+          >
             Bad
           </button>
         </li>
